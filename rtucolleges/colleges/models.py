@@ -19,6 +19,9 @@ class College(models.Model):
         _('Location'), max_length=50, null=True, blank=True)
     address = models.CharField(
         _('Address'), max_length=250, null=True, blank=True)
-    image = models.ImageField(upload_to='colleges_pics/')
-    establishment_date = models.DateTimeField(
+    image = models.ImageField(upload_to='colleges_pics/', blank=True, null=True)
+    establishment_date = models.DateField(
         _('Establishment Date'), blank=True, null=True)
+
+    def __str__(self):
+        return self.title

@@ -35,6 +35,9 @@ class User(AbstractUser):
     email_public = models.BooleanField(default=True)
     reputation = models.IntegerField(default='1')
 
+    def __str__(self):
+        return self.username
+
     # Is_student
     #     Student Rank
     #     Branch
